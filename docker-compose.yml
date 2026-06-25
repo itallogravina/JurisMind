@@ -1,0 +1,22 @@
+services:
+  # Interface web — http://localhost:8501
+  web:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+
+  # Pipeline CLI — docker compose run cli
+  cli:
+    build: .
+    command: python main.py
+    env_file:
+      - .env
+    volumes:
+      - ./inputs:/app/inputs
+      - ./outputs:/app/outputs

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ambiente
+.env
+venv/
+.venv/
+
+# Saídas geradas
+outputs/
+
+# PDFs e documentos de clientes (dados sensíveis)
+inputs/
